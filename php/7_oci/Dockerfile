@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 LABEL maintainer="Guilherme Maciel <guife78@gmail.com>"
 
-RUN dd-apt-repository ppa:ondrej/php \
+RUN add-apt-repository ppa:ondrej/php \
 apt-get update && apt-get install -y \
 apache2 \
 libapache2-mod-php7.2 \
