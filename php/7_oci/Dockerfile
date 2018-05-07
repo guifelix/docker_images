@@ -1,32 +1,33 @@
-FROM ubuntu
-LABEL maintainer="Ederson Ferreira <ederson.dev@gmail.com>"
+FROM ubuntu:18.04
+LABEL maintainer="Guilherme Maciel <guife78@gmail.com>"
 
-RUN apt-get update && apt-get install -y \
+RUN dd-apt-repository ppa:ondrej/php \
+apt-get update && apt-get install -y \
 apache2 \
-libapache2-mod-php \
-php \
-php-cli \
-php-common \
-php-curl \
-php-gd \
-php-ldap \
-php-mysql \
-php-odbc \
-php-pgsql \
-php-sqlite3 \
-php-bz2 \
-php-imagick \
-php-json \
-php-mbstring \
-php-mcrypt \
-php-pclzip \
-php-soap \
-php-xdebug \
-php-xml \
-php-zip \
-php-apcu \
-php-pear \
-php-dev \
+libapache2-mod-php7.2 \
+php7.2 \
+php7.2-cli \
+php7.2-common \
+php7.2-curl \
+php7.2-gd \
+php7.2-ldap \
+php7.2-mysql
+php7.2-odbc \
+php7.2-pgsql \
+php7.2-sqlite3 \
+php7.2-bz2 \
+php7.2-imagick \
+php7.2-json \
+php7.2-mbstring \
+php-mcrypt \ ---
+php-pclzip \ ---
+php7.2-soap \
+php-xdebug \  ---
+php7.2-xml \
+php7.2-zip \
+php-apcu \  ---
+php-pear \  ---
+php7.2-dev \
 phpunit \
 curl \
 mysql-client \
@@ -43,7 +44,7 @@ ENV APACHE_RUN_USER="www-data"
 ENV APACHE_RUN_GROUP="www-data"
 ENV APACHE_LOG_DIR="/var/log/apache2"
 
-LABEL Description="Webserver php 7 and mod oci"
+LABEL Description="Webserver php 7.2 and mod oci"
 
 VOLUME /var/www/html
 
