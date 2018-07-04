@@ -1,5 +1,5 @@
 FROM ubuntu
-LABEL maintainer="Ederson Ferreira <ederson.dev@gmail.com>"
+LABEL maintainer="Guilherme Maciel <guifelix.maciel@gmail.com>"
 
 RUN apt-get update && apt-get install -y \
 apache2 \
@@ -29,6 +29,8 @@ phpunit \
 curl \
 mysql-client \
 nano \
+cron \
+git \
 && apt-get clean && apt-get autoclean && apt-get autoremove \
 && rm -rf /var/lib/apt/lists/*
 
